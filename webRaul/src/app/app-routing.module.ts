@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppsComponent } from './components/apps/apps.component';
+import { AppDetailComponent } from './components/app-detail/app-detail.component';
+import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -14,10 +16,18 @@ const routes: Routes = [
     path: "Portfolio", component: PortfolioComponent,
     children: [
       { path: "", pathMatch: "prefix", redirectTo: "apps" },
-      { path: "apps", component: AppsComponent }
+      { path: "apps", component: AppsComponent},
+      { path: "apps/:filter", component: AppDetailComponent}
     ]
   },
-  { path: "Tecnologias", component: TechnologiesComponent },
+//  TODO: estoy con el router con los detalles
+  {
+    path: "Tecnologias", component: TechnologiesComponent,
+    children: [
+      { path: "", pathMatch: "prefix", redirectTo: "all" },
+      { path: "all", component: TecnologiesAllComponent }
+    ]
+  },
   { path: "Cursos", component: CoursesComponent },
   { path: "Sobre Mi", component: AboutComponent },
   { path: "**", component: PortfolioComponent }

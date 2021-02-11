@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AppsService } from 'src/app/services/apps.service';
 
 @Component({
@@ -7,12 +7,17 @@ import { AppsService } from 'src/app/services/apps.service';
   styleUrls: ['./apps.component.css']
 })
 export class AppsComponent implements OnInit {
+
   apps: any;
+  appsInterval: any[];
   classButton: string;
   valueClassButton: boolean;
+  @Input()valueFilterInput;
+
   constructor(private Appservices: AppsService) {
 
     this.apps = [];
+    this.appsInterval = [];
     this.classButton = "";
     this.valueClassButton = false;
   }
@@ -21,10 +26,13 @@ export class AppsComponent implements OnInit {
   async ngOnInit() {
     try {
       this.apps = await this.Appservices.getAll();
-      console.log(this.apps);
-
     } catch (error) {
       console.log(error);
+    }
+    for (let i = 0; i < this.apps.length; i++) {
+      setTimeout(() => {
+        this.appsInterval.push(this.apps[i])
+      }, 190 * (i + 1))
     }
   }
   hover(event) {

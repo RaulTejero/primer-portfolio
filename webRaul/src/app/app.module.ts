@@ -13,6 +13,8 @@ import { TechnologiesComponent } from './pages/technologies/technologies.compone
 import { CoursesComponent } from './pages/courses/courses.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
+import { AppDetailComponent } from './components/app-detail/app-detail.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CoursesComponent,
     AboutComponent,
     FooterComponent,
+    TecnologiesAllComponent,
+    AppDetailComponent,
    
   ],
   imports: [

@@ -5,7 +5,7 @@ import { DATA } from '../db/dbconfig';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorService {
+export class TechnologiesService {
 
   constructor(private HttpClient: HttpClient) {
 

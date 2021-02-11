@@ -1,0 +1,23 @@
+div.containerTechnologies {
+    display: flex;
+    flex-wrap: wrap;
+}
+div.containerTechnologies div {
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+    animation: scale .4s  ease-in-out;
+}
+div.containerTechnologies div img {
+    margin-bottom: 10px;
+    border: none;
+}
+div.containerTechnologies div h1 {
+    font-size: 18px;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+}
