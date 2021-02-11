@@ -1,0 +1,1 @@
+export const DATA = "https://webraultejero-default-rtdb.firebaseio.com/"

@@ -1,0 +1,33 @@
+/* no me deja usar root en padding si se modifica un valor, modificar todos */
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+section>div {
+    width: 20%;
+    padding: 20px; /**/
+    border: 1px solid red;
+    position: relative;
+}
+
+section>div div:first-child p {
+    text-align: end;
+    padding: 5px 0;
+    font-size: 12px;
+}
+section>div div:nth-child(2) p {
+    padding: 7px 0 calc(7px + 20px);/**/
+}
+section>div div:nth-child(3) {
+   position: absolute;
+   padding: 0 20px;/**/
+   width: 100%;
+   bottom: 20px;/**/
+   left: 0px;
+   display: flex;
+   justify-content: space-between;
+}
+

@@ -1,0 +1,16 @@
+<section>
+    <div *ngFor="let app of apps" class="containerProyect">
+        <div>
+            <img src="https://mariogl.com/wp-content/uploads/2018/01/git_logo-1-1.png">
+            <p>{{app.type}}</p>
+        </div>
+        <div>
+            <h1>{{app.title}}</h1>
+            <p>{{app.technologies}}</p>
+        </div>
+        <div>
+            <button ngClass={{classButton}} (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)">ver mas <i class="fas fa-arrow-right"></i></button>
+            <a *ngIf="app.view != false" href="">to visited</a>
+        </div>
+    </div>
+</section>

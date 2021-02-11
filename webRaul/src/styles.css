@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+/* generic */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: .9em;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+p {
+    color: var(--text-color-second);
+}
+
+a {
+    color: var(--text-color-footer);
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    color: rgb(40, 40, 140)
+}
+
+button {
+    background-color: white;
+    border: none;
+    color: var(--text-color-footer);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.rowButton i {
+    animation: row .5s infinite ease-in-out;
+}
+
+@keyframes row {
+    50% {
+        transform: translateX(3px);
+    }
+}
+
+:root {
+    --text-color-second: rgb(155, 155, 155);
+    --text-color-footer: #3d8ec0;
+}
+
+/* fin generic */
+
+/* selcts */
+
+div.containerSelectPortfolio, div.containerSelectCourses {
+    position: sticky;
+    top: 30px;
+    background-color: white;
+    padding: 30px 0 10px;
+    text-align: center;
+}
+
+div.containerSelectPortfolio select, div.containerSelectCourses select {
+    border: 1.2px solid black;
+    animation: selectTranslation 1s ease-in-out;
+}
+
+@keyframes selectTranslation {
+    0% {
+        color: white;
+        transform: translateX(-100vw);
+    }
+    50% {
+        color: white;
+        transform: translateX(0);
+    }
+}
+
+/* fin selects */

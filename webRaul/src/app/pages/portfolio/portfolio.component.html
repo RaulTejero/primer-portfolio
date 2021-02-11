@@ -1,0 +1,7 @@
+<div class="containerSelectPortfolio">
+    <select (change)="change($event)">
+        <option value="all" >Todas</option>
+        <option *ngFor="let technologie of technologiesFilter" value={{technologie}}>{{technologie}}</option>
+    </select>
+</div>
+<router-outlet></router-outlet>

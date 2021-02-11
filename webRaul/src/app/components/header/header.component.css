@@ -1,0 +1,13 @@
+div.containerHeader {
+    text-align: center;
+    padding: 20px 0 30px;
+}
+div.containerHeader h1 {
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+div.containerHeader h2 {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-color-second);
+}
