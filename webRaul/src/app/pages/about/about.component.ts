@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorService } from 'src/app/services/author.service';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  img: string;
 
-  ngOnInit(): void {
+  constructor(private authorService:AuthorService) {
+    this.img ="";
+   }
+
+  async ngOnInit() {
+    this.img = await this.authorService.getPhoto();
   }
 
 }

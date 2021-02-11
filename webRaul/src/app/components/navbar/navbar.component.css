@@ -20,4 +20,5 @@ div nav a:hover {
 div nav a.routerActive {
     background-color: black;
     border-bottom: 2px solid black;
+    color: var(--text-color-footer);
 }

@@ -1,7 +1,7 @@
 div {
-    height: 50vh;
-    position: relative;
-    padding-top: 30px;
+    height: 400px;
+    
+    
 }
 
 div h2 {
@@ -10,6 +10,7 @@ div h2 {
     font-size: 45px;
     margin: auto auto 0px;
     color: rgb(100, 100, 100);
+    z-index: -10;
 }
 
 div h2:first-child {
@@ -63,7 +64,7 @@ div h2:nth-child(6) {
 @keyframes change3 {
     0% {
         color: white;
-        transform: translate(-10px, 400px);
+        transform: translate(-10px, 200px);
         font-size: 5px;
         font-weight: initial;
     }

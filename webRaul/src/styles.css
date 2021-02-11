@@ -60,12 +60,11 @@ button.rowButton i {
 
 /* fin generic */
 
-/* selcts */
+/* selects */
 
 div.containerSelectPortfolio, div.containerSelectCourses {
     position: sticky;
     top: 30px;
-    border: 1px solid green;
     text-align: center;
     padding: 30px 0 ;
     background-color: white;
@@ -75,16 +74,23 @@ div.containerSelectPortfolio, div.containerSelectCourses {
 div.containerSelectPortfolio select, div.containerSelectCourses select {
     border: 1.2px solid black;
     animation: selectTranslation 1s ease-in-out;
+    background-color: black;
+    color: var(--text-color-footer);
+    padding-right:22px ;
 }
 
 @keyframes selectTranslation {
     0% {
         color: white;
+        background-color: white;
         transform: translateX(-100vw);
+        appearance: none;
     }
     50% {
         color: white;
+        background-color: white;
         transform: translateX(0);
+        appearance: none;
     }
 }
 
