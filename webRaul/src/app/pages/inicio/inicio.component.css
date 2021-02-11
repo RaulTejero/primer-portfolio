@@ -1,6 +1,7 @@
 div {
     height: 50vh;
     position: relative;
+    padding-top: 30px;
 }
 
 div h2 {

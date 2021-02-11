@@ -7,7 +7,7 @@ section {
 
 
 section>div {
-    width: 20%;
+    width: 50%; /*TODO: tamaño ajustar*/
     padding: 20px; /**/
     border: 1px solid red;
     position: relative;

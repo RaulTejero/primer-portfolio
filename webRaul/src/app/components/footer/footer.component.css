@@ -1,0 +1,30 @@
+div.containerFooter {
+    background-color: black;
+    padding: 40px 20px;
+}
+div.containerFooter div:first-child nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.containerFooter div:nth-child(2) nav {
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.containerFooter div a {
+    margin: 15px 15px;
+}
+div.containerFooter div a i {
+    font-size: 30px;
+    transition: all .3s ease-in-out;
+}
+div.containerFooter div a i:hover {
+    transform: scale(1.2);
+}
+div.containerFooter p {
+    text-align: center;
+    font-size: 12px;
+}

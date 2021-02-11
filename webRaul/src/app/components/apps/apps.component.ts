@@ -20,8 +20,7 @@ export class AppsComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      this.apps = await this.Appservices.getAll();
-      console.log(this.apps);  
+      this.apps = await this.Appservices.getAll(); 
     } catch (error) {
       console.log(error);
     }

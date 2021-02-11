@@ -8,24 +8,23 @@ import { AuthorService } from 'src/app/services/author.service';
 })
 export class HeaderComponent implements OnInit {
 
-  author: any;
+  author: string;
+  roll: string
 
   constructor(private AuthorService: AuthorService) {
-    this.author = {};
+    this.author = "";
 
   }
 
   async ngOnInit() {
-  
+
     try {
-      this.author = await this.AuthorService.getAll();
+      this.author = await this.AuthorService.getName();
+      this.roll = await this.AuthorService.getRoll();
 
     } catch (error) {
       console.log(error);
-
     }
   }
-
-
 
 }

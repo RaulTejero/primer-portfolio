@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorService } from 'src/app/services/author.service';
 import { BannerService } from 'src/app/services/banner.service';
 
 @Component({
@@ -16,11 +15,10 @@ export class InicioComponent implements OnInit {
   async ngOnInit() {
     try {
       this.banner = await this.bannerService.getAll();
-    } catch (error) {
-      console.log("error");
       
+    } catch (error) {
+      console.log("error"); 
     }
-    console.log(this.banner);
   }
 
 }

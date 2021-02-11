@@ -3,3 +3,9 @@ div.containerNav {
     top: 0;
     z-index: 10;
 }
+div.containerRouter {
+ border: 2px solid red;
+ padding: 50px;
+ max-width: 800px;
+ margin: auto; /*TODO: cambiar el tamaño*/
+}

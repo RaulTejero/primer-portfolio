@@ -12,6 +12,7 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { TechnologiesComponent } from './pages/technologies/technologies.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { AboutComponent } from './pages/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AboutComponent } from './pages/about/about.component';
     TechnologiesComponent,
     CoursesComponent,
     AboutComponent,
+    FooterComponent,
    
   ],
   imports: [

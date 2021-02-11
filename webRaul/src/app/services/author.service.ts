@@ -7,12 +7,29 @@ import { DATA } from '../db/dbconfig';
 })
 export class AuthorService {
 
-  constructor(private HttpClient: HttpClient) {
 
+  constructor(private HttpClient: HttpClient) {
+  
    }
-   getAll(): Promise<any> {
-     let result = this.HttpClient.get<any>(DATA+"author.json").toPromise();
-     return result;
+   getName(): Promise<any> {
+     let result = this.HttpClient.get<any>(DATA+"author/name.json").toPromise();
+     return result; 
    }
+   getRoll(): Promise<any> {
+    let result = this.HttpClient.get<any>(DATA+"author/roll.json").toPromise();
+    return result; 
+  }
+  getContact(): Promise<any> {
+    let result = this.HttpClient.get<any>(DATA+"author/contact.json").toPromise();
+    return result; 
+  }
+  getSocial(): Promise<any> {
+    let result = this.HttpClient.get<any>(DATA+"author/social.json").toPromise();
+    return result; 
+  }
+  getPhoto(): Promise<any> {
+    let result = this.HttpClient.get<any>(DATA+"author/photo.json").toPromise();
+    return result; 
+  }
 
 }

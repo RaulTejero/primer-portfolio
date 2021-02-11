@@ -1,1 +1,29 @@
+
+# recuperar todo
+get https://webraultejero-default-rtdb.firebaseio.com/.json
+
+###
+
+# recuperar todas las app
 get https://webraultejero-default-rtdb.firebaseio.com/apps.json
+
+###
+
+# recuperar author name
+get https://webraultejero-default-rtdb.firebaseio.com/author/name.json
+
+###
+
+get https://webraultejero-default-rtdb.firebaseio.com/courses.json?orderBy="title"&equalTo="blog"
+
+###
+# filter for key
+
+get https://webraultejero-default-rtdb.firebaseio.com/apps.json?orderBy="title"&equalTo="blog"
+###
+
+
+# dinosaurs.json?orderBy="height"&startAt=3&print=pretty'
+
+
+# dinosaurs.json?orderBy="dimensions/height"&startAt=3&print=pretty'
