@@ -8,22 +8,22 @@ import { AppsService } from 'src/app/services/apps.service';
 })
 export class AppsComponent implements OnInit {
 
-  apps: any;
+  apps: any[];
   appsInterval: any[];
   classButton: string;
-  valueClassButton: boolean;
-  @Input()valueFilterInput;
 
   constructor(private Appservices: AppsService) {
-
     this.apps = [];
     this.appsInterval = [];
     this.classButton = "";
-    this.valueClassButton = false;
   }
 
 
   async ngOnInit() {
+    console.log("inicio apps");
+
+
+
     try {
       this.apps = await this.Appservices.getAll();
     } catch (error) {
@@ -34,7 +34,24 @@ export class AppsComponent implements OnInit {
         this.appsInterval.push(this.apps[i])
       }, 190 * (i + 1))
     }
+
+
+    console.log("final apps");
+
   }
+
+  getFilterAppsForTechnologies() {
+    this.appsInterval = [];
+    let result = this.apps.filter(el => el.technologies.includes("Git"))
+    this.appsInterval= result;
+  }
+
+
+
+
+  
+
+
   hover(event) {
     if (event.target.className != "rowButton") {
       event.target.classList.add("rowButton");

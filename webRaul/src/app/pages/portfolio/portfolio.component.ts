@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppsService } from 'src/app/services/apps.service';
 
 @Component({
@@ -10,12 +10,12 @@ export class PortfolioComponent implements OnInit {
 
   apps: any;
   technologiesFilter: string[];
-  @Output() valueSelect: EventEmitter<string>;
+  valueSelect: any;
 
   constructor(private AppsService: AppsService) {
     this.apps = [];
     this.technologiesFilter = [];
-    this.valueSelect = new EventEmitter();
+    this.valueSelect = "all";
   }
 
   async ngOnInit() {
@@ -32,12 +32,17 @@ export class PortfolioComponent implements OnInit {
         if (this.technologiesFilter.includes(el)) {
         } else {
           this.technologiesFilter.push(el)
-        }
+        };
       });
     });
+
+    // console.log(this.valueSelect);
+    // console.log(this.apps);
   }
 
   change(event) {
-    this.valueSelect.emit(event.target.value) ;
+    this.valueSelect = event.target.value;
+    console.log(this.valueSelect);
+
   }
 }
