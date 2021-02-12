@@ -40,16 +40,22 @@ export class AppsComponent implements OnInit {
 
   }
 
-  getFilterAppsForTechnologies() {
-    this.appsInterval = [];
-    let result = this.apps.filter(el => el.technologies.includes("Git"))
-    this.appsInterval= result;
+  getFilterAppsForTechnologies(param = "all") {
+
+    if (param == "all") {
+      this.appsInterval = this.apps;
+
+    } else {
+      let result = this.apps.filter(el => el.technologies.includes(param))
+      this.appsInterval = result;
+    }
+
   }
 
 
 
 
-  
+
 
 
   hover(event) {

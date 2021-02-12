@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppsComponent } from 'src/app/components/apps/apps.component';
 import { AppsService } from 'src/app/services/apps.service';
+
 
 @Component({
   selector: 'app-portfolio',
@@ -7,6 +9,8 @@ import { AppsService } from 'src/app/services/apps.service';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
+  // importo viewchild y el componente hijo directo; 
+  @ViewChild(AppsComponent) valueExport: AppsComponent;
 
   apps: any;
   technologiesFilter: string[];
@@ -35,14 +39,11 @@ export class PortfolioComponent implements OnInit {
         };
       });
     });
-
-    // console.log(this.valueSelect);
-    // console.log(this.apps);
   }
 
   change(event) {
     this.valueSelect = event.target.value;
-    console.log(this.valueSelect);
-
+    //hace referencia a viewchild pra ehecutar una funcion del componente hijo apps
+    this.valueExport.getFilterAppsForTechnologies(this.valueSelect);
   }
 }
