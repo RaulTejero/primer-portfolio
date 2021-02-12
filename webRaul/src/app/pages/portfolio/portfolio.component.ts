@@ -44,6 +44,7 @@ export class PortfolioComponent implements OnInit {
   change(event) {
     this.valueSelect = event.target.value;
     //hace referencia a viewchild pra ehecutar una funcion del componente hijo apps
+    // TODO Observables esto no funciona
     this.valueExport.getFilterAppsForTechnologies(this.valueSelect);
   }
 }

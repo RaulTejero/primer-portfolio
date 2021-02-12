@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppDetailComponent } from './components/app-detail/app-detail.component';
 import { AppsComponent } from './components/apps/apps.component';
 import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -15,10 +16,11 @@ const routes: Routes = [
     path: "Portfolio", component: PortfolioComponent,
     children: [
       { path: "", pathMatch: "prefix", redirectTo: "apps" },
-      { path: "apps", component: AppsComponent}
+      { path: "apps", component: AppsComponent },
+      { path: "apps/detail", component: AppDetailComponent }
     ]
   },
-//  TODO: estoy con el router con los detalles
+  //  TODO: estoy con el router con los detalles
   {
     path: "Tecnologias", component: TechnologiesComponent,
     children: [
