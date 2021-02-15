@@ -14,7 +14,9 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
-import { AppDetailComponent } from './components/app-detail/app-detail.component';
+import { AppDetailsComponent } from './components/app-details/app-details.component';
+
+
 
 
 @NgModule({
@@ -30,13 +32,14 @@ import { AppDetailComponent } from './components/app-detail/app-detail.component
     AboutComponent,
     FooterComponent,
     TecnologiesAllComponent,
-    AppDetailComponent,
+    AppDetailsComponent,
+
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

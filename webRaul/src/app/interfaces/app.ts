@@ -1,4 +1,4 @@
-export interface Apps {
+export interface App {
     title: string,
     type: string,
     view: boolean,
@@ -6,5 +6,6 @@ export interface Apps {
     imgFirst: string,
     description: any,
     img: string[],
-    technologies: string[]
+    technologies: string[],
+    id: number
 }

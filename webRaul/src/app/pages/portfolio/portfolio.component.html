@@ -1,5 +1,5 @@
 <div class="containerSelectPortfolio">
-    <select value="all" (change)="change($event)">
+    <select (change)="change($event)">
         <option value="all">Todas</option>
         <option *ngFor="let technologie of technologiesFilter" value={{technologie}}>{{technologie}}</option>
     </select>

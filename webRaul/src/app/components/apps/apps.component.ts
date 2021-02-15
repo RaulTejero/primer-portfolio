@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Apps } from 'src/app/interfaces/apps';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { App } from 'src/app/interfaces/app';
+import { PortfolioComponent } from 'src/app/pages/portfolio/portfolio.component';
 import { AppsService } from 'src/app/services/apps.service';
 
 @Component({
@@ -9,48 +12,49 @@ import { AppsService } from 'src/app/services/apps.service';
 })
 export class AppsComponent implements OnInit {
 
-  apps: Apps[];
-  appsInterval: Apps[];
+  apps: App[];
   classButton: string;
+  appSelect: any;
+  private appSelect$: Subject<App>;
 
-  constructor(private Appservices: AppsService) {
+  constructor(private Appservices: AppsService, private PortfoliComponent: PortfolioComponent, private router: Router) {
     this.apps = [];
-    this.appsInterval = [];
     this.classButton = "";
+    this.appSelect = {};
+    this.appSelect$ = new Subject();
   }
 
 
   async ngOnInit() {
-    console.log("inicio apps");
     try {
       this.apps = await this.Appservices.getAll();
     } catch (error) {
       console.log(error);
     }
-    for (let i = 0; i < this.apps.length; i++) {
-      setTimeout(() => {
-        this.appsInterval.push(this.apps[i])
-      }, 190 * (i + 1))
-    }
-    console.log("final apps");
-  }
+    this.PortfoliComponent.getFilterAppsForTechnologies$().subscribe(apps => {
+      this.apps = apps;
+      console.log(this.apps);
 
-  getFilterAppsForTechnologies(param = "Node JS") {
-
-    if (param == "all") {
-      this.appsInterval = this.apps;
-
-    } else {
-      let result = this.apps.filter(el => el.technologies.includes(param))
-      this.appsInterval = result;
-    }
+    })
 
   }
 
+  onClick(event) {
+    let id = event.target.value;
+    let title = "";
 
+    this.appSelect = this.apps.find(el => el.id == id);
 
+    this.appSelect.title;
+  
+    this.router.navigate(["detail", title]);
+    this.appSelect$.next(this.appSelect);
+    console.log(this.appSelect$);
+  }
 
-
+  getappSelected$(): Observable<App> {
+    return this.appSelect$.asObservable();
+  }
 
 
   hover(event) {

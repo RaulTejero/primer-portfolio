@@ -1,8 +1,7 @@
-<h1 (click)="getFilterAppsForTechnologies()">cambia</h1>
 <section>
-    <div *ngFor="let app of appsInterval" class="containerProyect">
+    <div *ngFor="let app of apps" class="containerProyect">
         <div>
-            <img src={{app.imgFirst}}>
+            <img ngClass={{classButton}} src={{app.imgFirst}}>
             <p>{{app.type}}</p>
         </div>
         <div>
@@ -10,7 +9,7 @@
             <p>{{app.technologies}}</p>
         </div>
         <div>
-            <button ngClass={{classButton}} (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)">ver mas <i class="fas fa-arrow-right"></i></button>
+            <button value={{app.id}} (click)="onClick($event)"  (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)">ver mas <i class="fas fa-arrow-right"></i></button>
             <a *ngIf="app.view != false" href={{app.site}} target="_blank">to visited</a>
         </div>
     </div>

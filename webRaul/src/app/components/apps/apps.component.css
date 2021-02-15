@@ -1,4 +1,4 @@
-/* no me deja usar root en padding si se modifica un valor, modificar todos */
+/* no me deja usar root en padding si se modifica un valor, modificar todos "20px"*/
 
 section {
     display: flex;
@@ -11,7 +11,6 @@ section div.containerProyect {
     padding: 20px;
     /**/
     position: relative;
-    animation: rotate .6s ease-in-out;
 }
 
 section>div div:first-child p {
@@ -37,9 +36,3 @@ section>div div:nth-child(3) {
     justify-content: space-between;
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotateY(90deg);
-        transform-origin: left;
-    }
-}
