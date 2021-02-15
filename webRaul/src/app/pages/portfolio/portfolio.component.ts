@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppsComponent } from 'src/app/components/apps/apps.component';
+import { Apps } from 'src/app/interfaces/apps';
 import { AppsService } from 'src/app/services/apps.service';
 
 
@@ -12,9 +13,9 @@ export class PortfolioComponent implements OnInit {
   // importo viewchild y el componente hijo directo; 
   @ViewChild(AppsComponent) valueExport: AppsComponent;
 
-  apps: any;
+  apps: Apps[];
   technologiesFilter: string[];
-  valueSelect: any;
+  valueSelect: string;
 
   constructor(private AppsService: AppsService) {
     this.apps = [];
@@ -23,6 +24,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   async ngOnInit() {
+
 
     try {
       this.apps = await this.AppsService.getAll();
@@ -39,12 +41,24 @@ export class PortfolioComponent implements OnInit {
         };
       });
     });
+    console.log(this.apps);
+
+  }
+
+  async getFilterAppsForTechnologies(param) {
+    let appsFilter = this.apps;
+    if (param != "all") {
+      appsFilter = this.apps.filter(el => el.technologies.includes(param));
+    } 
+    console.log(appsFilter);
   }
 
   change(event) {
     this.valueSelect = event.target.value;
-    //hace referencia a viewchild pra ehecutar una funcion del componente hijo apps
-    // TODO Observables esto no funciona
-    this.valueExport.getFilterAppsForTechnologies(this.valueSelect);
+    console.log(this.valueSelect);
+    this.getFilterAppsForTechnologies(this.valueSelect)
   }
+
+
 }
+

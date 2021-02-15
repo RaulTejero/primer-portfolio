@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Technologies } from 'src/app/interfaces/technologies';
 import { TechnologiesService } from 'src/app/services/technologies.service';
 
 
@@ -9,7 +10,7 @@ import { TechnologiesService } from 'src/app/services/technologies.service';
 })
 export class TecnologiesAllComponent implements OnInit {
 
-  technologies: any[];
+  technologies: Technologies[];
   technologiesInterval: any[];
 
   constructor(private technologiesService: TechnologiesService) {
@@ -25,13 +26,14 @@ export class TecnologiesAllComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-   
+
+
     for (let i = 0; i < this.technologies.length; i++) {
-     setTimeout(() => {
+      setTimeout(() => {
         this.technologiesInterval.push(this.technologies[i])
-      }, 200*(i+1))
-      
+      }, 200 * (i + 1))
     }
+
   }
 
 }

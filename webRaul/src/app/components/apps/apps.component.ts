@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Apps } from 'src/app/interfaces/apps';
 import { AppsService } from 'src/app/services/apps.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { AppsService } from 'src/app/services/apps.service';
 })
 export class AppsComponent implements OnInit {
 
-  apps: any[];
-  appsInterval: any[];
+  apps: Apps[];
+  appsInterval: Apps[];
   classButton: string;
 
   constructor(private Appservices: AppsService) {
@@ -21,9 +22,6 @@ export class AppsComponent implements OnInit {
 
   async ngOnInit() {
     console.log("inicio apps");
-
-
-
     try {
       this.apps = await this.Appservices.getAll();
     } catch (error) {
@@ -34,13 +32,10 @@ export class AppsComponent implements OnInit {
         this.appsInterval.push(this.apps[i])
       }, 190 * (i + 1))
     }
-
-
     console.log("final apps");
-
   }
 
-  getFilterAppsForTechnologies(param = "all") {
+  getFilterAppsForTechnologies(param = "Node JS") {
 
     if (param == "all") {
       this.appsInterval = this.apps;
