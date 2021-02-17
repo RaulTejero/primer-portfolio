@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { DATA } from '../db/dbconfig';
 import { App } from '../interfaces/app';
 
@@ -8,6 +8,9 @@ import { App } from '../interfaces/app';
 })
 export class AppsService {
 
+appSelected$ =  new EventEmitter<string>();
+appSelect: App;
+
   constructor(private httpclien: HttpClient) {
   
   }
@@ -15,4 +18,13 @@ export class AppsService {
     let result = this.httpclien.get<App[]>(DATA + 'apps.json').toPromise();
     return result;
   }
+
+  getAppSelected() {
+    let result = this.appSelect
+    return result;
+  }
+  
+
+
+  
 }

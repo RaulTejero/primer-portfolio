@@ -9,7 +9,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --text-color-second: rgb(155, 155, 155);
+    --text-color-footer: #3d8ec0;
+}
 body {
     font-family: 'Roboto', sans-serif;
     font-size: .9em;
@@ -56,10 +59,7 @@ button.rowButton i {
     }
 }
 
-:root {
-    --text-color-second: rgb(155, 155, 155);
-    --text-color-footer: #3d8ec0;
-}
+
 
 /* fin generic */
 
@@ -82,7 +82,7 @@ div.containerSelectPortfolio select, div.containerSelectCourses select {
     padding-right:22px ;
 }
 
-@keyframes selectTranslation {
+/* @keyframes selectTranslation {
     0% {
         color: white;
         background-color: white;
@@ -95,6 +95,6 @@ div.containerSelectPortfolio select, div.containerSelectCourses select {
         transform: translateX(0);
         appearance: none;
     }
-}
+} */
 
 /* fin selects */

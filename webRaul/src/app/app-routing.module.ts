@@ -16,10 +16,10 @@ const routes: Routes = [
     path: "Portfolio", component: PortfolioComponent,
     children: [
       { path: "", pathMatch: "prefix", redirectTo: "apps" },
-      { path: "apps", component: AppsComponent }
+      { path: "apps", component: AppsComponent },
+      { path: ":title", component :AppDetailsComponent}
     ]
   },
-  { path: "detail/:title", component: AppDetailsComponent},
   {
     path: "Tecnologias", component: TechnologiesComponent,
     children: [

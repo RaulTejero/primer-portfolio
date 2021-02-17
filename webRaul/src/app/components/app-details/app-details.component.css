@@ -1,0 +1,36 @@
+div.containerDetail {
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.948);
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    color: var(--text-color-footer);
+}
+
+div button {
+    display: block;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.948);
+}
+
+div h2 {
+    font-size: 10px;
+    color: var(--text-color-second);
+    padding: 10px 0;
+    font-weight: normal;
+}
+
+div p {
+    margin-bottom: 5px;
+}
+
+div p:last-child {
+    margin-bottom: 25px;
+}
+
+div img {
+    margin-bottom: 10px;
+}

@@ -31,7 +31,7 @@ export class TecnologiesAllComponent implements OnInit {
     for (let i = 0; i < this.technologies.length; i++) {
       setTimeout(() => {
         this.technologiesInterval.push(this.technologies[i])
-      }, 200 * (i + 1))
+      }, 150 * (i + 1))
     }
 
   }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { App } from 'src/app/interfaces/app';
-import { AppsComponent } from '../apps/apps.component';
+import { AppsService } from 'src/app/services/apps.service';
+
 
 
 @Component({
@@ -10,15 +12,19 @@ import { AppsComponent } from '../apps/apps.component';
 })
 export class AppDetailsComponent implements OnInit {
   app: App;
-  constructor() { 
-    
+
+  constructor(private AppService: AppsService, private router: Router) {
+
   }
 
-  ngOnInit(): void {
-    // this.appsComponente.getappSelected$().subscribe(app => {
-    //   this.app = app;
-    // })
-    
-  }
+  async ngOnInit() {
 
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
+    this.app = this.AppService.getAppSelected();
+  }
 }

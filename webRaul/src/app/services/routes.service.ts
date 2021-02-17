@@ -6,7 +6,6 @@ import { DATA } from '../db/dbconfig';
   providedIn: 'root'
 })
 export class RoutesService {
-
   constructor(private HttpClient: HttpClient) {
 
    }

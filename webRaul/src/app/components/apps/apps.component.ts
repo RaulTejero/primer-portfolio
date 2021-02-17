@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
 import { App } from 'src/app/interfaces/app';
-import { PortfolioComponent } from 'src/app/pages/portfolio/portfolio.component';
 import { AppsService } from 'src/app/services/apps.service';
 
 @Component({
@@ -12,48 +10,67 @@ import { AppsService } from 'src/app/services/apps.service';
 })
 export class AppsComponent implements OnInit {
 
+  allApps: App[];
+  technologiesFilter: string[];
   apps: App[];
+  valueSelect: string;
+  appSelect: App;
   classButton: string;
-  appSelect: any;
-  private appSelect$: Subject<App>;
 
-  constructor(private Appservices: AppsService, private PortfoliComponent: PortfolioComponent, private router: Router) {
+  constructor(private AppsServices: AppsService, private router: Router) {
+    this.allApps = [];
+    this.technologiesFilter = [];
     this.apps = [];
+    this.valueSelect = "";
     this.classButton = "";
-    this.appSelect = {};
-    this.appSelect$ = new Subject();
   }
 
 
   async ngOnInit() {
+
     try {
-      this.apps = await this.Appservices.getAll();
+      this.allApps = await this.AppsServices.getAll();
     } catch (error) {
       console.log(error);
     }
-    this.PortfoliComponent.getFilterAppsForTechnologies$().subscribe(apps => {
-      this.apps = apps;
-      console.log(this.apps);
-
-    })
+    this.apps = this.allApps;
+    this.allApps.forEach(el => {
+      let result = el.technologies;
+      result.forEach(el => {
+        if (this.technologiesFilter.includes(el)) {
+        } else {
+          this.technologiesFilter.push(el)
+        };
+      });
+    });
 
   }
 
-  onClick(event) {
+  async onClick(event) {
+
     let id = event.target.value;
     let title = "";
 
-    this.appSelect = this.apps.find(el => el.id == id);
+    this.appSelect = this.allApps.find(el => el.id == id);
+    title = this.appSelect.title;
 
-    this.appSelect.title;
-  
-    this.router.navigate(["detail", title]);
-    this.appSelect$.next(this.appSelect);
-    console.log(this.appSelect$);
+    this.AppsServices.appSelect = this.appSelect;
+
+    this.AppsServices.getAppSelected();
+    this.router.navigate(["Portfolio", title]);
   }
 
-  getappSelected$(): Observable<App> {
-    return this.appSelect$.asObservable();
+  change(event) {
+    this.valueSelect = event.target.value;
+    this.getFilterAppsForTechnologies(this.valueSelect);
+  }
+
+  getFilterAppsForTechnologies(param) {
+    if (param != "all") {
+      this.apps = this.allApps.filter(el => el.technologies.includes(param));
+    } else {
+      this.apps = this.allApps;
+    }
   }
 
 
@@ -62,6 +79,7 @@ export class AppsComponent implements OnInit {
       event.target.classList.add("rowButton");
     }
   }
+
   mouseOut(event) {
     if (event.target.className == "rowButton") {
       event.target.classList.remove("rowButton")
