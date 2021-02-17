@@ -1,0 +1,18 @@
+div.containerCourse {
+    display: flex;
+}
+
+div.containerCourse>div {
+    width: 25%;
+    padding: 20px;
+    position: relative;
+}
+
+div.containerCourse>div>div h5 {
+    padding: 10px 0;
+}
+
+div.containerCourse>div>div>div {
+    position: absolute;
+    bottom: 0;
+}

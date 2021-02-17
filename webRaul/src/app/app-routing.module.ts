@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AllCoursesComponent } from './components/all-courses/all-courses.component';
 import { AppDetailsComponent } from './components/app-details/app-details.component';
 import { AppsComponent } from './components/apps/apps.component';
 import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
     children: [
       { path: "", pathMatch: "prefix", redirectTo: "apps" },
       { path: "apps", component: AppsComponent },
-      { path: ":title", component :AppDetailsComponent}
+      { path: ":title", component: AppDetailsComponent }
     ]
   },
   {
@@ -27,7 +28,14 @@ const routes: Routes = [
       { path: "all", component: TecnologiesAllComponent }
     ]
   },
-  { path: "Cursos", component: CoursesComponent },
+  {
+    path: "Cursos", component: CoursesComponent,
+    children: [
+      {path:"", pathMatch: "prefix", redirectTo: "all"},
+      {path:"all", component: AllCoursesComponent}
+    ]
+  },
+ 
   { path: "Sobre Mi", component: AboutComponent },
   { path: "**", component: PortfolioComponent }
 ];

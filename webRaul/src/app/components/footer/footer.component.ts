@@ -9,20 +9,29 @@ import { AuthorService } from 'src/app/services/author.service';
 export class FooterComponent implements OnInit {
 
   contact: any;
-  socials: any[];
+  socials: any;
+  cv: string;
 
   constructor(private authorServise: AuthorService) {
 
     this.contact = {};
     this.socials = [];
+    this.cv = "";
   }
   async ngOnInit() {
     try {
       this.contact = await this.authorServise.getContact();
       this.socials = await this.authorServise.getSocial();
+      this.cv = await this.authorServise.getCV();
+
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
+
+    console.log(this.contact);
+    console.log(this.cv);
+    console.log(this.socials);
+     
   }
 
 }

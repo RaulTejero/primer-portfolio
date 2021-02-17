@@ -15,6 +15,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
 import { AppDetailsComponent } from './components/app-details/app-details.component';
+import { AllCoursesComponent } from './components/all-courses/all-courses.component';
 
 
 
@@ -33,6 +34,7 @@ import { AppDetailsComponent } from './components/app-details/app-details.compon
     FooterComponent,
     TecnologiesAllComponent,
     AppDetailsComponent,
+    AllCoursesComponent,
 
    
   ],

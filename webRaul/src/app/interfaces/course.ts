@@ -1,4 +1,4 @@
-export interface Courses {
+export interface Course {
     description: string,
     finished: boolean,
     id: number,

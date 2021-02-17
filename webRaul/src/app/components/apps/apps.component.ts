@@ -15,14 +15,14 @@ export class AppsComponent implements OnInit {
   apps: App[];
   valueSelect: string;
   appSelect: App;
-  classButton: string;
+  // classButton: string;
 
   constructor(private AppsServices: AppsService, private router: Router) {
     this.allApps = [];
     this.technologiesFilter = [];
     this.apps = [];
     this.valueSelect = "";
-    this.classButton = "";
+    // this.classButton = "";
   }
 
 

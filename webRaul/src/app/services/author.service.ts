@@ -31,5 +31,9 @@ export class AuthorService {
     let result = this.HttpClient.get<any>(DATA+"author/photo.json").toPromise();
     return result; 
   }
+  getCV(): Promise<any> {
+    let result = this.HttpClient.get<any>(DATA+"author/cv.json").toPromise();
+    return result; 
+  }
 
 }
