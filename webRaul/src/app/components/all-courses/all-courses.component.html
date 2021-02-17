@@ -1,20 +1,25 @@
 <div class="containerSelectCourses">
-    <select (change)="onChange($event)">
-        <option value="all">Todos</option>
-        <option *ngFor="let course of allCourses" value={{course.title}}>{{course.title}}</option>
-    </select>
+    <div>
+        <i class="fas fa-arrow-down"></i>
+        <select (change)="onChange($event)">
+            <option value="all">Todos</option>
+            <option *ngFor="let course of allCourses" value={{course.title}}>{{course.title}}</option>
+        </select>
+    </div>
+
 </div>
 
 
 <div class="containerCourse">
-    <div *ngFor="let course of allCourses" >
+    <div *ngFor="let course of allCourses">
         <img src={{course.img}}>
         <div>
-            <h5 >{{course.title}}</h5>
-            <p >{{course.description}}</p>
+            <h5>{{course.title}}</h5>
+            <p>{{course.description}}</p>
             <div class="course">
                 <a *ngIf="!course.finished">Prox ...</a>
-                <a (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)" *ngIf="course.finished" routerLink={{course.title}}>Ver más <i class="fas fa-arrow-right"></i></a>
+                <a (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)" *ngIf="course.finished"
+                    routerLink={{course.title}}>Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>

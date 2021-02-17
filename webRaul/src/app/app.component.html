@@ -10,3 +10,5 @@
 <div class="containerFooter">
     <app-footer></app-footer>
 </div>
+<button  [ngStyle]="{'color':'black'}" *ngIf="!valueDark" (click)="onClicK()"><i class="far fa-moon"></i></button>
+<button [ngStyle]="{'color':'white'}" *ngIf="valueDark" (click)="onClicK()"><i class="far fa-sun"></i></button>

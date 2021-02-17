@@ -1,21 +1,15 @@
 
 div nav {
-    background-color: white;
-    padding: 12px 0;
+    padding: 10px 0;
     text-align: center;
 }
 div nav a {
     padding: 10px;
-    border-bottom: 2px solid white;
     color: var(--text-color-second);
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
-div nav a:hover {
-    border-bottom: 2px solid black;
-    cursor: pointer;
-}
 
 div nav a.routerActive {
     background-color: black;

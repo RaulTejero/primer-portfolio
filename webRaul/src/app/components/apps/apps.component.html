@@ -1,8 +1,11 @@
 <div class="containerSelectPortfolio">
-    <select (change)="change($event)">
-        <option value="all">Todas</option>
-        <option *ngFor="let technologie of technologiesFilter" value={{technologie}}>{{technologie}}</option>
-    </select>
+    <div>
+        <i class="fas fa-arrow-down"></i>
+        <select (change)="change($event)">
+            <option *ngFor="let technologie of technologiesFilter" value={{technologie}}>{{technologie}}</option>
+            
+        </select>
+    </div>
 </div>
 
 <section>
@@ -16,7 +19,8 @@
             <p>{{app.technologies}}</p>
         </div>
         <div>
-            <button value={{app.id}} (click)="onClick($event)"  (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)">ver mas <i class="fas fa-arrow-right"></i></button>
+            <button value={{app.id}} (click)="onClick($event)" (mouseenter)="hover($event)"
+                (mouseleave)="mouseOut($event)">ver mas <i class="fas fa-arrow-right"></i></button>
             <a *ngIf="app.view != false" href={{app.site}} target="_blank">Visitar</a>
         </div>
     </div>
