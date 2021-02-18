@@ -6,8 +6,7 @@ section {
 }
 
 section div.containerProyect {
-    width: 50%;
-    /*TODO: tamaño ajustar*/
+    width: 100%;
     padding: 20px;
     /**/
     position: relative;
@@ -36,3 +35,14 @@ section>div div:nth-child(3) {
     justify-content: space-between;
 }
 
+@media (min-width: 720px) {
+    section div.containerProyect  {
+        width: 50%;
+        
+    }
+}
+@media (min-width: 960px) {
+    section div.containerProyect  {
+        width: 33.333%;
+    }
+}
