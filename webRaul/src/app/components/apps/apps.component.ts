@@ -22,7 +22,6 @@ export class AppsComponent implements OnInit {
     this.technologiesFilter = [];
     this.apps = [];
     this.valueSelect = "";
-    // this.classButton = "";
   }
 
 

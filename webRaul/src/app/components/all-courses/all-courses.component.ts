@@ -10,12 +10,14 @@ import{CoursesServices} from 'src/app/services/courses.service';
 export class AllCoursesComponent implements OnInit {
 
   allCourses: Course[];
+  courses: Course[];
   valueSelect: string;
   // this.classButton = "";
 
   constructor(private coursesService: CoursesServices) {
 
     this.allCourses = [];
+    this.courses = [];
 
   }
 
@@ -23,14 +25,22 @@ export class AllCoursesComponent implements OnInit {
   async ngOnInit() {
 
     this.allCourses = await this.coursesService.getAll();
-    console.log(this.allCourses);
+    this.courses = this.allCourses;
     
-
   }
 
   onChange(event){
     this.valueSelect = event.target.value;
     console.log(this.valueSelect);
+    this.filterCourses(this.valueSelect)
+  }
+
+  filterCourses(param) {
+    if (param != "all") {
+      this.courses = this.allCourses.filter(el=> el.title.includes(param));
+    } else {
+      this.courses = this.allCourses;
+    }
     
   }
   

@@ -1,13 +1,15 @@
 <div class="containerDetail">
-    <button routerLink="/Portfolio/apps">Volver <i class="fas fa-undo"></i></button>
     <div>
-        <h1>{{app.title}}</h1>
-        <h2>{{app.type}}</h2>
-        <p *ngFor="let text of app.description">{{text}}</p>
-    </div>
-    <div>
-        <div class="img">
-            <img *ngFor="let img of app.img" src={{img}} alt="imagen">
+        <button routerLink="/Portfolio/apps">Volver <i class="fas fa-undo"></i></button>
+        <div>
+            <h1>{{app.title}}</h1>
+            <h2>{{app.type}}</h2>
+            <p *ngFor="let text of app.description">{{text}}</p>
+        </div>
+        <div>
+            <div class="img">
+                <img *ngFor="let img of app.img" src={{img}} alt="imagen">
+            </div>
         </div>
     </div>
 </div>

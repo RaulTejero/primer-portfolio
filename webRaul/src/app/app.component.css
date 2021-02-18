@@ -9,12 +9,11 @@ div.containerRouter {
  margin: auto; /*TODO: cambiar el tamaño*/
 }
 button {
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 20px;
     z-index: 100;
 }
 button i {
     font-size: 20px;
-    /* color: blue; */
 }

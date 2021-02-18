@@ -27,10 +27,6 @@ export class FooterComponent implements OnInit {
     } catch (error) {
       console.log(error)
     }
-
-    console.log(this.contact);
-    console.log(this.cv);
-    console.log(this.socials);
      
   }
 

@@ -11,8 +11,9 @@
 
 
 <div class="containerCourse">
-    <div *ngFor="let course of allCourses">
-        <img src={{course.img}}>
+    <div *ngFor="let course of courses">
+        <div class="background" [ngStyle]="{'backgroundImage': 'url('+course.img+')'}">
+        </div>
         <div>
             <h5>{{course.title}}</h5>
             <p>{{course.description}}</p>

@@ -38,6 +38,9 @@ img {
 p {
     color: var(--text-color-second);
 }
+a,button {
+    outline: none;
+}
 
 a {
     color: var(--text-color-footer);
