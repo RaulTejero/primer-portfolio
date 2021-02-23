@@ -169,9 +169,16 @@ main li, main p {
 }
 main ul {
     list-style: none;
+    color: var(--text-color-second);
 }
 
 main ul li::before {
     content: " - ";
+}
+main li>ul>li::before{
+    content: none;
+}
+main img {
+    margin: 5px 0;
 }
 /* courses fin  */

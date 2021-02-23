@@ -15,23 +15,21 @@
             <h3>Iniciar el proyecto</h3>
             <ul>
                 <li>Crear proyecto: ><strong> ng new nombreProyecto</strong></li>
-                <li>Para levantar el servidor en el puerto http://localhost:4200 : ><strong> ng serve</strong>,tambien
-                    puedes incluir el comando: <strong>-o</strong> y se abrira el navegador por defecto. </li>
+                <li>Para levantar el servidor en el puerto http://localhost:4200 : ><strong> ng serve</strong>, tambien puedes incluir el comando: <strong>-o</strong> y se abrira el navegador por defecto. </li>
             </ul>
         </article>
         <article>
             <h3>Comandos para crear elementos</h3>
             <ul>
                 <li>><strong> ng generate tipoDeElemento nombre </strong></li>
-                <li>Tipos de elementos: <strong>component, directive, route, pipe, service, class, interface y
-                        enum</strong></li>
+                <li>Tipos de elementos: <strong>component, directive, route, pipe, service, class, interface y enum.</strong></li>
                 <li>Ejemplos:
-                    <ol>
+                    <ul>
                         <li>><strong> ng generate component inicio</strong></li>
                         <li>><strong> ng g c inicio, </strong> ejemplo anterior simplificado.</li>
-                        <li>><strong> ng generate intrface interfaces/persona</strong>, se puede crear una ruta para
-                            mayor organizacion.</li>
-                    </ol>
+                        <li>><strong> ng generate interface interfaces/persona</strong>, se puede crear una ruta para
+                            mayor organizacion. En este caso se creara una carpeta interfaces con el interface persona</li>
+                    </ul>
                 </li>
             </ul>
         </article>
@@ -52,27 +50,29 @@
             <h3>Generar componentes</h3>
             <p>Aqui generamos un componente "inicio", se crean tres archivos del componente .html, .css y .ts
             </p>
-            <img src="../../../assets/imgCursoAngular/Captura de pantalla 2021-01-29 105213.png" alt="">
-            <p>En el .ts se encuentra;</p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2FCaptura%20de%20pantalla%202021-01-29%20105213.png?alt=media&token=fe290f23-becc-4392-b1cb-281d2292fb36" alt="">
+            <p>En el archivo .htm se encuenta la vista, la estructura es igual a la de html.</p>
+            <p>En el archivo .css se definen los estilos.</p>
+            <p>En el .ts se ejecuta Javascript</p>
             <ul>
-                <li><strong>import</strong> Son las importaciones de las librerias, componentes..etc</li>
-                <li><strong>@component</strong> Se encuentra el selector que hace referencia al componente,template y los estilos que hacen referencia al .html y .css que al ser un array podemos crear todos archivos .css quee necesitemos</li>
-                <li><strong>export</strong> Exportable dentro del ambito y donde se declaran las variables</li>
-                <li><strong>constructor</strong>dentro de los parentesis; inyectables; dentro del ambito; inicializacion  de variables</li>
-                <li><strong>ngOnInit</strong> Se ejecuta al iniciar el componente todo lo que este dentro del ambito
+                <li><strong>import</strong>: Importaciones de archivos necesarios</li>
+                <li><strong>@component</strong>: Se encuentra el selector que hace referencia al componente, el template y los estilos, que al ser un array podemos crear todos archivos .css que necesitemos</li>
+                <li><strong>export</strong>: Es el ambito de nuestra clase</li>
+                <li><strong>constructor</strong>: dentro de los parentesis( inyectables ), dentro del ambito; inicialización  de variables</li>
+                <li><strong>ngOnInit</strong>: Aquello que se ejecutara al iniciar el compononte.
                 </li>
             </ul>
-            <img src="../../../assets/imgCursoAngular/code.png">
+            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode.png?alt=media&token=e65ee252-9b84-44d4-916b-36498dc7a6c0">
         </article>
         <article>
             <h3>Anidar componentes</h3>
             <p>Existe la posibilidad de anidar componentes simplemente añadiendo el selector de un componente en el .html de otro componente</p>
             <p><strong> Anteriormente tienes que importar y declarar dichos componentes en el app.module.ts</strong>, suelen importarse automaticamente si se general por comando por el terminal</p>
-            <img src="../../../assets/imgCursoAngular/code1.png">
+            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode1.png?alt=media&token=3424e8f6-448f-4d5b-82f5-3b3ae9c5f3f5">
             <h3>Interpolarizacion</h3>
             <p>Es la capacidad que tiene Angular de poder renderizar el valor de variables y operaciones logicas
             </p>
-            <img src="../../../assets/imgCursoAngular/code2.png" alt="">
+            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode2.png?alt=media&token=55cc2c5c-422e-4499-9386-3cdc90ad694e" alt="">
         </article>
     </section>
     <section>
@@ -83,27 +83,27 @@
             <p></p>
             <div class=" flex">
                 <div class="binding">
-                    <!-- <button (click)="onClick()">Valor de la variable <strong>{{valueBtn}}</strong></button> -->
+                    <button (click)="onClick()">Pulsame y cambia el valor = <strong>{{valueBtn}}</strong></button>
                     <p>1</p>
                     <input type="text" disabled value="valueBtn">
-                    <!-- los atributos son estaticos, solo son cadenas de texto -->
+                    los atributos son estaticos, solo son cadenas de texto
                     <p>2</p>
-                    <!-- <input type="text" [disabled]="valueBtn" [value]="valueBtn"> -->
-                    <!-- adquieren propiedades y evaluan el valor-->
+                    <input type="text" [disabled]="valueBtn" [value]="valueBtn">
+                    adquieren propiedades y evaluan el valor
                     <p>3</p>
-                    <!-- <input type="text" [disabled]="valueBtn" value={{valueBtn}}> -->
-                    <!--  Diasabled obtiene propiedades y value le es declarado un balor por interpolarizacion -->
+                    <input type="text" [disabled]="valueBtn" value={{valueBtn}}>
+                     Diasabled obtiene propiedades y value le es declarado un valor por interpolarizacion
                 </div>
                 <div>
-                    <img src="../../../assets/imgCursoAngular/code4.png" alt="">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode4.png?alt=media&token=25a53871-16bc-4648-b13e-2589e01c4c9cg" alt="">
                 </div>
             </div>
-            <img src="../../../assets/imgCursoAngular/code3.png" alt="">
+           <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode3.png?alt=media&token=62fc202d-f58e-4dbb-be02-ea7d5cf0eaf1" alt="">
         </article>
         <article>
             <h3>Event Binding</h3>
-            <p>Son como los eventos nativos de JS sin el on entre parentesis y despues del igual la declaración, podemos pasar el evento como parametro con <strong>$event</strong></p>
-            <img src="../../../assets/imgCursoAngular/code5.png" alt="">
+            <p>Son como los eventos nativos de JS sin el "on" entre parentesis y despues del igual la declaración, podemos pasar el evento como parametro con <strong>$event</strong></p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoAngular%2Fcode5.png?alt=media&token=da6fb836-1cb8-43c3-adb8-26d4ee8e660e" alt="">
             <p>Tambien podemos crear eventos personalizados, los EventEmitter</p>
         </article>
 

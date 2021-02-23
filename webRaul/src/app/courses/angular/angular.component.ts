@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AngularComponent implements OnInit {
 
-  constructor() { }
+  name: string;
+  valueBtn: boolean;
+  changes: any;
+
+  toWayBinding: string;
+
+  constructor() {
+    this.valueBtn = true;
+
+   }
 
   ngOnInit(): void {
+  }
+
+  onClick() {
+    this.valueBtn = !this.valueBtn;
   }
 
 }
