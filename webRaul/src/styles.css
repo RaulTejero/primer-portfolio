@@ -75,6 +75,13 @@ button:hover {
 /* fin generic */
 
 /* inicio nav  */
+body div>nav.navBarRouter {
+    border-bottom: 2px solid white;
+}
+
+body.dark div>nav.navBarRouter {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
 
 body nav.navBarRouter, body nav.navBarRouter a {
     background-color: rgb(255, 255, 255);
@@ -102,6 +109,7 @@ body.dark nav.navBarRouter a:hover {
     border-bottom: 2px solid var(--text-color-footer);
     cursor: pointer;
 }
+
 
 /* fin nav  */
 
@@ -148,3 +156,22 @@ div.containerSelectPortfolio i, div.containerSelectCourses i {
 }
 
 /* fin selects */
+/* courses */
+body.dark main {
+    color: blanchedalmond;
+}
+
+main h2, main h3, main h4 {
+    margin: 20px 0;
+}
+main li, main p {
+    margin-bottom: 5px;
+}
+main ul {
+    list-style: none;
+}
+
+main ul li::before {
+    content: " - ";
+}
+/* courses fin  */

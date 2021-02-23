@@ -20,7 +20,7 @@
             <div class="course">
                 <a *ngIf="!course.finished">Prox ...</a>
                 <a (mouseenter)="hover($event)" (mouseleave)="mouseOut($event)" *ngIf="course.finished"
-                    routerLink={{course.title}}>Ver más <i class="fas fa-arrow-right"></i></a>
+                    routerLink="/Cursos/course/{{course.title}}">Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>

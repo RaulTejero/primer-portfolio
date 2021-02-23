@@ -12,7 +12,6 @@ div.containerCourse>div {
 
 div.containerCourse>div>div h5 {
     padding: 10px 0;
-
 }
 
 div.containerCourse>div>div> p {
@@ -26,7 +25,10 @@ div.background {
     background-size: contain;
 }
 div.course a{
-   align-self: start;
+   position: absolute;
+   bottom: 10px;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 

@@ -16,6 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TecnologiesAllComponent } from './components/tecnologies-all/tecnologies-all.component';
 import { AppDetailsComponent } from './components/app-details/app-details.component';
 import { AllCoursesComponent } from './components/all-courses/all-courses.component';
+import { JsComponent } from './courses/js/js.component';
+import { RouterComponent } from './courses/router/router.component';
+import { AngularComponent } from './courses/angular/angular.component';
+import { GitComponent } from './courses/git/git.component';
 
 
 
@@ -35,6 +39,10 @@ import { AllCoursesComponent } from './components/all-courses/all-courses.compon
     TecnologiesAllComponent,
     AppDetailsComponent,
     AllCoursesComponent,
+    JsComponent,
+    RouterComponent,
+    AngularComponent,
+    GitComponent,
 
    
   ],

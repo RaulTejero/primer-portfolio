@@ -1,0 +1,248 @@
+<div class=" relative">
+        <header>
+            <h1>JavaScript</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Como se carga JavaScript</h2>
+                <ul>
+                    <li>Dentro y al final del head con una etiqueta script y crear todo el codigo js dentro (no recomendable
+                        porque ensucia el código html).
+                    </li>
+                    <li>Dentro y al final del head con una etiqueta script añadir el atributo src y cargar la ruta del archivo
+                        JS creado anteriormente 'src="archivoJs" (no recomendable porque el script hace referencia al Dom y el
+                        Html carga despues) '</li>
+                    <li>Como las dos opciones anteriores pero <strong>al final del body</strong> , ya que el html necesita
+                        cargar antes el script. Siendo lamejor forma crear un archivo JS y cargarlo a traves de etiqueta
+                        <strong> script src="archivo.js".</strong>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tipos de datos</h2>
+            <ul>
+                <li><strong>undefined.</strong> Sin definir</li>
+                <li><strong>null.</strong> No existe</li>
+                <li><strong>string</strong> o cadena de caracteres. (Entre comillas) </li>
+                <p>var name = "Luis Alfonso"</p>
+                <li><strong>number.</strong>
+                <p>var number = 3</p>
+                <ul>
+                    <li>Entero; 45</li>
+                    <li>Racional; 4.66</li>
+                    <li>Negativo; -8</li>
+                </ul>
+                </li>
+                <li><strong>Boolean.</strong>. Logico; true / false</li>
+            </ul>
+            </section>
+            <section>
+                <h2>Operadores</h2>
+                <article>
+                    <h3>Asignacion</h3>
+                    <p>Guarda el valor en la variable</p>
+                    <p><strong>var number = 2</strong></p>
+                </article>
+                <article>
+                    <h3>Incremento y decremento</h3>
+                    <p><strong>var numero = 10</strong></p>
+                    <p><strong>numero++ </strong> suma 1 =>11</p>
+                    <p><strong>numero--</strong>resta 1 => 9</p>
+                </article>
+                <article>
+                    <h3>Aritmeticos o matematicos</h3>
+                    <p>let number1 = 4;</p>
+                    <p>let number2 = 2;</p>
+                    <p><strong>let resultado = number1 - number2 => 2</strong></p>
+                    <p><strong>let resultado = number1 + number2 => 6</strong></p>
+                    <p><strong>let resultado = number1 * number2 => 8</strong></p>
+                    <p><strong>let resultado = number1 / number2 => 2</strong></p>
+                    <p>El siguiente operador es el modulo, calcula el resto de una division de ente dos numeros</p>
+                    <p><strong>let resultado = 7%3 </strong>=>1</p>
+                    <p>Se suele usar para saber si un numro es par o impar</p>
+                </article>
+                <article>
+                    <h3>Racionales o comparacion</h3>
+                    <p><strong>Devuelve un boolean</strong></p>
+                    <p>Mayor que <strong>></strong></p>
+                    <p>Menor que  <strong><</strong> </p>
+                    <p>Igual o mayor que <strong>>=</strong></p>
+                    <p>Igual o menor que  <strong><=</strong> </p>
+                    <p>Igual que <strong>==</strong></p>
+                    <p>Diferente de <strong>!=</strong></p>
+                </article>
+                <article>
+                    <h3>Logicos</h3>
+                    <p>Let verdad = true;</p>
+                    <p><strong>console.log(!number) </strong> false</p>
+                </article>
+                <article>
+                    <h3>And (&&)</h3>
+                    <p>(true && true) => true</p>
+                    <p>(false && ture) => false</p>
+                    <p>(true && false) => false</p>
+                    <p>(false && false) => false</p>
+                </article>
+                <article>
+                    <h3>Or(||)</h3>
+                    <p>(true ||   true) => true</p>
+                    <p>(false || true) => true</p>
+                    <p>(true || false) => true</p>
+                    <p>(false || false) => false</p>
+                </article>
+                <article>
+                    <h3>De concatenación</h3>
+                    <p>let nombre= "Pedro"</p>
+                    <p>let segundoNombre= "Luis"</p>
+                    <p>let nombreCompleto = nombre <strong>+</strong>" "<strong>+</strong> segundoNombre => "Pedro Luis"</p>
+                    <p>nombre <strong>+=</strong> segundoNombre => "PedroLuis"</p>
+                </article>
+            </section>
+            <section>
+                <h2>El DOM</h2>
+                <p>Document Object Model</p>
+                <article>
+                    <h3>Nodos</h3>
+                    <p>Las paginas HTML pueden manipular estos nodos;</p>
+                    <ul>
+                        <li>Document, es el nodo raiz de donde derivan los demás nodos</li>
+                        <li>Elemet, representa a las etiquetas HTML.</li>
+                        <li>Attr, representa a cada uno de lños atributos.</li>
+                        <li>Text, representa al texto de una etiqueta HTML. </li>
+                        <li>Comment, representa a los comentarios incluidos en el HTML.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Obtener Nodos</h3>
+                    <p>Obtener uno o varios nodos segun, la funcion y el parametro que se le pase </p>
+                    <ul>
+                        <li><strong>getElementByTagName</strong>, obtiene tos los selectores con el selector "p";   <strong>var parrafos = getElementByTagName("p")</strong>
+                            <ul>
+                                <li>Devuelve un array con todos los nodos, pero un array HTML Collection, que para acceder a uno en cocreto hay que indicar la posicion entre corchetes; <strong>var segundoP = parrafos[1] </strong></li>
+                                <li>Se podrian recorrer todos con un bucle for</li>
+                                <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode.png?alt=media&token=8600b7d2-28ba-4408-993e-0245a56b63b1" alt="">
+                                <li>Para adentrar en algunas de sus propiedades se le añade un punto y la propiedad; <strong>var segundoP = parrafo[1].textContent</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>getElementByName()</strong>, igual que la anterior por esta vez a través de atributo name con valor (x)</li>
+                        <li><strong>getElemnetById()</strong>, nodo con dicho id en el html </li>
+                        <li><strong>querySelector()</strong> , en este caso tienes que añadir los selectores como si se tratase de CSS, <strong>solo obtendra el primer elemento que contenga el selector</strong> </li>
+                        <p>Ejemplo: <strong>var parrafo = document.querySelector("div.banner ul.list li:first-child)</strong> </p>
+                        <li><strong>querySelectorAll()</strong>, todos los selectores que coincidan co el selector</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Añadir nodos al DOM</h3>
+                    <p>Son varios pasos;</p>
+                    <ol>
+                        <li><strong>var parrafo = document.createElement("p")</strong></li>
+                        <li><strong>var texto = document.createTextNode("Soy un parrafo")</strong> </li>
+                        <li><strong>parrafo.appendChild(texto)</strong> </li>
+                        <li><strong>document.body.appendChild(parrafo)</strong> </li>
+                    </ol>
+                    <p>appendChild es una funcion que inserta como hijo el parametro indicado entre los corchetes</p>
+                    <p>El paso 3 se puede omitir de la siguiente manera;</p>
+                    <p><strong>document.body.appendChild(parrafo.appendChild(texto))</strong> </p>
+                </article>
+                <article>
+                    <h3>Borrar un elemento del DOM</h3>
+                    <p><strong>removeChild()</strong></p>
+                    <p>Para poder borrar un elemento necesitamos capturar el elemento, subir un al padre y pasar el parametro</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode1.png?alt=media&token=174b39a7-19b8-4b4c-8820-8f1e3040a8b8" alt="">
+                    <p>De una forma coloquial seria, capturo al elemento y digo; desde mi posicion subo a mi padre y me borro a mi</p>
+                </article>
+                <article>
+                    <h3>Acceder y modificar los atributo y propiedades de un nodo</h3>
+                    <article>
+                        <h4>Acceder</h4>
+                        <p>Para acceder, una vez capturado el elemento se accede a sus propiedades con punto seguido y la propiedad</p>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode2.png?alt=media&token=a3aef1c8-e1a7-414f-b285-d89550df69f1" alt="">
+                        <p>En este ejemplo, se captura el id de un ul y se accede a la propiedad .children y .childNodes</p>
+                    </article>
+                    <article>
+                        <h4>Modificar</h4>
+                        <p>Se realiza el paso anterior pero asignandole un nuevo valor.</p>
+                        <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode3.png?alt=media&token=459027b4-ae17-413d-926d-9b565b67c35d" alt="">
+                        <p>Para modificar los estilos CSS hay que acceder a la propiedad .style, seguido del propiedad (ejemplo) .margin</p>
+                        <p>Para modificarlo se realiza igual que en el ejemplo anterior, con la diferencia que las propiedades CSS cambian los guiones por camelCase</p>
+                        <ul>
+                            <li><strong>margin-top</strong></li>
+                            <li><strong>marginTop</strong></li>
+                        </ul>
+                        
+                        
+                    </article>
+                </article>
+                <article>
+                    <h2>Eventos</h2>
+                    <p>Los eventos son acciones que se realizan entre usuario/navegador, (acción, reacción) </p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2FScreenshot_2021-02-09%20Eventos%20JavaScript.png?alt=media&token=b4ed9064-e9fd-4473-a8aa-faff810b5a4d" alt="">
+                    <p>Hay algunos selectores HTML que desencadenan eventos por defecto, como por ejemplo; <strong> input type="submit"</strong></p>
+                    <p>Para evitar esto se utiliza esta sintaxis</p>
+                    <p><strong>event.preventDefault()</strong></p>
+                </article>
+            </section>
+            <section>
+                <h2>Variables y constantes</h2>
+                <p>Son un tipo de contenedor donde podemos guardar datos y en algunos casos modificarlos</p>
+                <article>
+                    <h3>Constantes</h3>
+                    <p>Se usa la palabra reservada <strong>const</strong></p>
+                    <p>Dato constante, no se puede reasignar pero si se podran modificar sus valores con ciertos metodos.</p>
+                    <ul>
+                        <li>const number = 5;</li>
+                        <li>console.log(number) // 5</li>
+                        <li>number = "Cambio a texto" //Error se puede asignar otro valor a una constate</li>
+                    </ul>
+                    <p>Las constantes puede asignar cualquier tipo de dato; sting, objeto, array, boolean, etc</p>
+                </article>
+                <article>
+                    <h3>Variables</h3>
+                    <p><strong>var.</strong> Como su nombre indica es un contenedor de datos variables. Al no ser un lenguaje
+                    fuertemente tipado el tipo de dato puede variar.</p>
+                    <ul>
+                        <li>var number = 5;</li>
+                        <li>console.log(number) // 5</li>
+                        <li>number = "Cambio a texto"</li>
+                        <li>console.log(number) // "Cambio a texto" </li>
+                    </ul>
+                    <p>En las variables se utiliza la palabra reservada <strong>let</strong> como <strong>var</strong> dependiendo el hambito</p>
+                </article>
+            </section>
+            <section>
+                <h2>Ámbito</h2>
+                <p>Dependiendo de donde se declaren las variables y constantes tienen un hambito de funcion o de bloque</p>
+                <article>
+                    <h3>Globales</h3>
+                   <p>Todas las constantes y variables que estan en la raiz del codigo son accesibles desde cualquiel punto del codigo</p>
+                   <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode4.png?alt=media&token=5e146cd3-4576-488d-81bf-c5feacfa0696" alt="">
+                </article>
+                <article>
+                    <h3>De función</h3>
+                    <p>Todas las que esten declaradas dentro de una funcion no se pueden acceder a ellas desde  fuera</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode5.png?alt=media&token=b142c6a1-8447-4324-8b56-b10c31bb65fa" alt="">
+                </article>
+                <article>
+                    <h3>De bloque</h3>
+                    <p>En este ejemplo se observa como dentro de una primera funcion se declaran tres variables <strong>var</strong> dentro de un bloque, acto seguido fuera del bloque de declaracion hay un console.log que hacen referencia a esas variables pudiendo acceder a su valor</p>
+                    <p>En la segunda funcion que es exactamente la misma pero declarando <strong>const</strong> y <strong>let</strong> vemos que el console.log no puede acceder a estas</p>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode5.png?alt=media&token=b142c6a1-8447-4324-8b56-b10c31bb65fa" alt="">
+                </article>
+            </section>
+            <section>
+                <h2>Template literals</h2>
+                <p>Es otra forma que existe para inyectar expresiones dentro de una cadena de cararacteres, para ello se usa <strong>$ y }</strong> de apertura y cierre, se necesitan cerrar entre <strong>`comillas francesas la cadena de texto` </strong> </p>
+                <p>Respetan los saltos de linea y tabulaciones</p>
+                <p>Dentro de las llaves podemos incluso ejecutar funciones </p>
+                <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcode7.png?alt=media&token=f98322c0-4cff-40e3-84e2-de30e2c35a9e" alt="">
+            </section>
+            <section>
+                <h2>Clases</h2>
+            </section>
+        </main>
+       
+        <h1>Trabajando en mas contenido ....</h1>
+     
+     
+    </div>
+

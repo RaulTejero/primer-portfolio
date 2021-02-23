@@ -1,0 +1,135 @@
+<header>
+    <h1>Angular</h1>
+</header>
+<main>
+    <section>
+        <h2>Primeros pasos con Angular</h2>
+        <article>
+            <h3>Instalar Angular</h3>
+            <ul>
+                <li>A través de npm: ><strong> npm install -g @angular/cli</strong></li>
+                <li>Comprobamos la instalación: ><strong> ng --version</strong></li>
+            </ul>
+        </article>
+        <article>
+            <h3>Iniciar el proyecto</h3>
+            <ul>
+                <li>Crear proyecto: ><strong> ng new nombreProyecto</strong></li>
+                <li>Para levantar el servidor en el puerto http://localhost:4200 : ><strong> ng serve</strong>,tambien
+                    puedes incluir el comando: <strong>-o</strong> y se abrira el navegador por defecto. </li>
+            </ul>
+        </article>
+        <article>
+            <h3>Comandos para crear elementos</h3>
+            <ul>
+                <li>><strong> ng generate tipoDeElemento nombre </strong></li>
+                <li>Tipos de elementos: <strong>component, directive, route, pipe, service, class, interface y
+                        enum</strong></li>
+                <li>Ejemplos:
+                    <ol>
+                        <li>><strong> ng generate component inicio</strong></li>
+                        <li>><strong> ng g c inicio, </strong> ejemplo anterior simplificado.</li>
+                        <li>><strong> ng generate intrface interfaces/persona</strong>, se puede crear una ruta para
+                            mayor organizacion.</li>
+                    </ol>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h3>Build del proyecto</h3>
+            <ul>
+                <li>> <strong>ng build</strong></li>
+                <li>> <strong>Si se necesita empaquetar el codigo añadir el sufijo
+                        <strong>--prod</strong></strong>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h2>Componentes</h2>
+        <p>Los componentes son vistas que se pueden reutilizar y organizar en función de las necesidades de nuestro proyecto</p>
+        <article>
+            <h3>Generar componentes</h3>
+            <p>Aqui generamos un componente "inicio", se crean tres archivos del componente .html, .css y .ts
+            </p>
+            <img src="../../../assets/imgCursoAngular/Captura de pantalla 2021-01-29 105213.png" alt="">
+            <p>En el .ts se encuentra;</p>
+            <ul>
+                <li><strong>import</strong> Son las importaciones de las librerias, componentes..etc</li>
+                <li><strong>@component</strong> Se encuentra el selector que hace referencia al componente,template y los estilos que hacen referencia al .html y .css que al ser un array podemos crear todos archivos .css quee necesitemos</li>
+                <li><strong>export</strong> Exportable dentro del ambito y donde se declaran las variables</li>
+                <li><strong>constructor</strong>dentro de los parentesis; inyectables; dentro del ambito; inicializacion  de variables</li>
+                <li><strong>ngOnInit</strong> Se ejecuta al iniciar el componente todo lo que este dentro del ambito
+                </li>
+            </ul>
+            <img src="../../../assets/imgCursoAngular/code.png">
+        </article>
+        <article>
+            <h3>Anidar componentes</h3>
+            <p>Existe la posibilidad de anidar componentes simplemente añadiendo el selector de un componente en el .html de otro componente</p>
+            <p><strong> Anteriormente tienes que importar y declarar dichos componentes en el app.module.ts</strong>, suelen importarse automaticamente si se general por comando por el terminal</p>
+            <img src="../../../assets/imgCursoAngular/code1.png">
+            <h3>Interpolarizacion</h3>
+            <p>Es la capacidad que tiene Angular de poder renderizar el valor de variables y operaciones logicas
+            </p>
+            <img src="../../../assets/imgCursoAngular/code2.png" alt="">
+        </article>
+    </section>
+    <section>
+        <h2>Binding</h2>
+        <article>
+            <h3>Property Binding</h3>
+            <p>Crear una propiedad a un atributo al que hay que delimitar con <strong>[ ]</strong>, esto hace que se pueda evaluar la parte derecha </p>
+            <p></p>
+            <div class=" flex">
+                <div class="binding">
+                    <!-- <button (click)="onClick()">Valor de la variable <strong>{{valueBtn}}</strong></button> -->
+                    <p>1</p>
+                    <input type="text" disabled value="valueBtn">
+                    <!-- los atributos son estaticos, solo son cadenas de texto -->
+                    <p>2</p>
+                    <!-- <input type="text" [disabled]="valueBtn" [value]="valueBtn"> -->
+                    <!-- adquieren propiedades y evaluan el valor-->
+                    <p>3</p>
+                    <!-- <input type="text" [disabled]="valueBtn" value={{valueBtn}}> -->
+                    <!--  Diasabled obtiene propiedades y value le es declarado un balor por interpolarizacion -->
+                </div>
+                <div>
+                    <img src="../../../assets/imgCursoAngular/code4.png" alt="">
+                </div>
+            </div>
+            <img src="../../../assets/imgCursoAngular/code3.png" alt="">
+        </article>
+        <article>
+            <h3>Event Binding</h3>
+            <p>Son como los eventos nativos de JS sin el on entre parentesis y despues del igual la declaración, podemos pasar el evento como parametro con <strong>$event</strong></p>
+            <img src="../../../assets/imgCursoAngular/code5.png" alt="">
+            <p>Tambien podemos crear eventos personalizados, los EventEmitter</p>
+        </article>
+
+    </section>
+    <section>
+        <h2>Input / Output</h2>
+        <article>
+            <h4>@Input</h4>
+            <p>Es el decorador que define a la propiedad con la que vamos a trabajar</p>
+            <p>Como indica el decorador, recibimos un valor</p>
+            <!-- <p>{{recibo}}</p> -->
+        </article>
+        <article>
+            <h4>@Output</h4>
+        </article>
+    </section>
+    <section>
+        <h2>Two Way Binding</h2>
+        <article>
+            <p>Con <strong>ngModel</strong>Tenemos la posibilidad de crear binding de dos vias</p>
+            <p>Primero se necestia importar en app.module <strong>FormModule</strong> </p>
+        </article>
+    </section>
+</main>
+
+<div class="bannerAlert">
+    <p>En mantenimiento ...</p>
+
+</div>

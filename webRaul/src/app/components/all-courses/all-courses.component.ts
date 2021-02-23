@@ -12,7 +12,6 @@ export class AllCoursesComponent implements OnInit {
   allCourses: Course[];
   courses: Course[];
   valueSelect: string;
-  // this.classButton = "";
 
   constructor(private coursesService: CoursesServices) {
 

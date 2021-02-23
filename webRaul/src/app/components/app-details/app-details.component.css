@@ -16,7 +16,7 @@ div.containerDetail>div{
 
 div.containerDetail>div button:first-child {
     display: block;
-    margin: 20px 30px 0 auto;
+    margin: 20px 0 20px auto;
 }
 
 div.containerDetail h2 {
