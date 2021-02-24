@@ -11,6 +11,7 @@ import { AppsService } from 'src/app/services/apps.service';
 export class AppsComponent implements OnInit {
 
   allApps: App[];
+  orderApps: App[];
   technologiesFilter: string[];
   apps: App[];
   valueSelect: string;
@@ -19,6 +20,7 @@ export class AppsComponent implements OnInit {
 
   constructor(private AppsServices: AppsService, private router: Router) {
     this.allApps = [];
+    this.orderApps = [];
     this.technologiesFilter = [];
     this.apps = [];
     this.valueSelect = "";
@@ -29,10 +31,15 @@ export class AppsComponent implements OnInit {
 
     try {
       this.allApps = await this.AppsServices.getAll();
+
     } catch (error) {
       console.log(error);
     }
-    this.apps = this.allApps;
+    this.orderApps = this.allApps.sort((a,b)=> {
+      return b.id-a.id;
+    })
+   
+    this.apps = this.orderApps;
     this.allApps.forEach(el => {
       let result = el.technologies;
       result.forEach(el => {
