@@ -10,6 +10,15 @@ export class JsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  
+    
+
   }
 
 }
+
+
+
+
+
