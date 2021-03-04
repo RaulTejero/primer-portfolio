@@ -160,9 +160,17 @@ div.containerSelectPortfolio i, div.containerSelectCourses i {
 body.dark main {
     color: blanchedalmond;
 }
+main div.line {
+    width: 70%;
+    border: 1px solid var(--text-color-footer);
+    margin: 40px auto;
+}
 
 main h2, main h3, main h4 {
     margin: 20px 0;
+}
+main h4 {
+    font-size: 14px;
 }
 main li, main p {
     margin-bottom: 5px;
