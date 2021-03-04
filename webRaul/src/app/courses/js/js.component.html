@@ -13,23 +13,14 @@
             </article>
             <article>
                 <h3>Como se carga JavaScript</h3>
-                <p>Creamos un archivo .js en nuestra carpeta del proyecto a la altura del archivo html, o en una
-                    subcarpeta pero teniendo en cuanta la ruta para luego poder acceder a dicho archivo </p>
+                <p>Tenemos varias opciones</p>
                 <ul>
-                    <li>Dentro del .html y al final del head con una etiqueta script y crear todo el codigo js dentro
-                        (no recomendable
-                        porque ensucia el código html).
-                    </li>
-                    <li>Dentro y al final del head con una etiqueta script añadir el atributo src y cargar la ruta del
-                        archivo
-                        JS creado anteriormente 'src="archivoJs" (no recomendable porque el script hace referencia al
-                        Dom y el
-                        Html carga despues) '</li>
-                    <li>Como las dos opciones anteriores pero <strong>al final del body</strong> , ya que el html
-                        necesita
-                        cargar antes el script. Siendo la mejor forma crear un archivo JS y cargarlo a traves de
-                        etiqueta
-                        <strong> script src="archivo.js".</strong>
+                    <li>Una opcion es crear una etiqueta script y escribir el codigo js dentro de dicha etiqueta. Esa etiqueta puede estar al final del head (Problemas: ensuciara mucho el html y no cargara antes que el dom uno podra hacer refencia a nada) o al final del body (ensucia el html) </li>
+                    <li>Crear un archivo .js, cargarlo con la etiqueta script y con el atributo src vinculamos el archivo. Pero tenemos dos opciones:
+                        <ul>
+                            <li>Al final del head (cargara antes que el html y no podra hacer referencia al DOM)</li>
+                            <li>Al final del body (Recomendable porque cargara el html y despues el .js que hace referencia al DOM ya cargado)</li>
+                        </ul>
                     </li>
                 </ul>
                 <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcarga.png?alt=media&token=7d3af8f9-9993-42b2-9c87-e6de605411b2"
@@ -39,7 +30,7 @@
             <article>
                 <h3>Imprimir por consola y alerts</h3>
                 <p><strong>console.log("Hola mundo")</strong> se imprime en la consola del navegador "Hoa mundo</p>
-                <p> <strong>alert("hola mundo") </strong>ejecuta una alerta en el navegador</p>
+                <p> <strong>alert("hola mundo") </strong>ejecuta un mensaje de alerta en el navegador</p>
             </article>
         </section>
         <section>
@@ -47,32 +38,31 @@
             <ul>
                 <li><strong>undefined.</strong> Sin definir</li>
                 <li><strong>null.</strong> No existe</li>
-                <li><strong>string</strong> o cadena de caracteres. (Entre comillas) </li>
-                <p>var name = "Luis Alfonso"</p>
+                <li><strong>string</strong> o cadena de caracteres. (Entre comillas) => "Luis Alfonso"  </li>
                 <li><strong>number.</strong>
-                    <p>var number = 3</p>
                     <ul>
                         <li>Entero; 45</li>
                         <li>Racional; 4.66</li>
                         <li>Negativo; -8</li>
                     </ul>
                 </li>
-                <li><strong>Boolean.</strong>. Logico; true / false</li>
+                <li><strong>Boolean.</strong>. Logico=> true / false</li>
+                <li><strong>Object</strong></li> Objetos o Arrays.
             </ul>
         </section>
         <section>
             <h2>Variables y constantes</h2>
             <p>Son un tipo de contenedor donde podemos guardar datos y en algunos casos modificarlos</p>
-            <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fasignacion.png?alt=media&token=bad31fb7-82ec-4404-8bed-acdf2ac234c4" alt="">
+          
             <article>
                 <h3>Constantes</h3>
                 <p>Se usa la palabra reservada <strong>const </strong>para la declaracion</p> 
-                <p>Dato constante, no se puede reasignar pero si se podran modificar sus valores con ciertos momentos y
+                <p>El dato es constante, no se puede reasignar pero si se podran modificar sus valores en ciertos momentos y
                     con sus metodos.</p>
                 <ul>
                     <li><strong> const number = 5;</strong></li>
                 </ul>
-                <p>Las constantes puede asignar cualquier tipo de dato; sting, objeto, array, boolean, etc</p>
+                <p>Las constantes puede asignar cualquier tipo de dato; string, objeto, array, boolean, etc</p>
             </article>
             <article>
                 <h3>Variables</h3>
@@ -85,6 +75,7 @@
                     <li><strong> number = "Cambio a texto"</strong></li>
                     <li><strong>console.log(number)</strong> // "Cambio a texto" </li>
                 </ul>
+                <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fasignacion.png?alt=media&token=bad31fb7-82ec-4404-8bed-acdf2ac234c4" alt="">
                 <p>En las variables se utiliza la palabra reservada <strong>let</strong> como <strong>var</strong>
                     dependiendo el hambito</p>
             </article>
@@ -317,7 +308,8 @@
             </article>
             <article>
                 <h3>get y set</h3>
-                <p>Con get y set encapsulamos la forma de acceder a las propiedades y moddificar sus valores</p>
+                <p>Con get y set encapsulamos la forma de acceder a las propiedades y poder modificar sus valores</p>
+                <p>Enn este ejemplo vemos que se puede acceder a la propiedad .propietario como .nombre por get y set</p>
                 <img src="https://firebasestorage.googleapis.com/v0/b/webraultejero.appspot.com/o/cursoJS%2Fcodeclass3.png?alt=media&token=a10c87ca-f210-4cc8-a35b-3430cf164c8c"
                     alt="">
             </article>
