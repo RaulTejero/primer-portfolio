@@ -1,3 +1,2 @@
-# Portfolio personal
-
-[Link](https://webraultejero.web.app/)
+# Primer portfolio personal
+Realizado con Angular y Firebase
